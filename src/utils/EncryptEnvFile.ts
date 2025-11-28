@@ -9,6 +9,7 @@ const configDir=path.resolve(projectDir,"config");
 const envFilePath=`${configDir}\\.env.${env}`;
 
 export function encryptEnvFile(){
+  console.log(`Encrypting .env file at path: ${envFilePath}`);
   const envFileContent=fs.readFileSync(envFilePath,"utf8");
   const envLines=envFileContent.split("\n");
   const encryptedLines=envLines.map((line:string)=>{

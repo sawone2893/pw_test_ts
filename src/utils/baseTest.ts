@@ -1,5 +1,5 @@
 import { test as basTest, expect } from "@playwright/test";
-import { PageFixtures } from "../fixtures/pageFixtures";
+import { PageFixtures } from "../fixtures/PageFixtures";
 
 type Fixtures = {
   pages: PageFixtures;

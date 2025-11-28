@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 import path from "path";
 import * as dotenv from "dotenv";
-import { decrypt } from "./utils/CryptoJSUtils";
+import { decrypt } from "./src/utils/CryptoJSUtils";
 
 /**
  * Read environment variables from file.
@@ -15,7 +15,7 @@ import { decrypt } from "./utils/CryptoJSUtils";
 const env = process.env.ENV || "qa";
 // Load corresponding .env file
 
-dotenv.config({ path: path.resolve(__dirname, 'config', `.env.${env}`) });
+dotenv.config({ path: path.resolve(__dirname, './src/config', `.env.${env}`) });
 const url:string=decrypt(process.env.BASE_URL!);
 console.log(`App Url:${url}`);
 /**
