@@ -1,19 +1,19 @@
-import { Page } from "@playwright/test";
+import { Page } from "playwright";
 import { commonLocators } from "../locators/locators";
-export class HomePage {
-  private page: Page;
+import { BasePage } from "../base/basePage";
+export class HomePage extends BasePage {
   constructor(page: Page) {
-    this.page = page;
+    super(page);
   }
 
   async goToHomePage() {
-    await this.page.goto("/");
+    await this.navigateTo("/");
   }
   async enterCredentials(userId: string, password: string) {
-    await this.page.locator(commonLocators.textBox("UserID")).fill(userId);
-    await this.page.locator(commonLocators.textBox("Password")).fill(password);
-    await this.page
-      .locator(commonLocators.inputWithAttribute("value", "LOGIN"))
-      .click();
+    await this.typeText(commonLocators.textBox("UserID"), userId);
+    await this.typeText(commonLocators.textBox("Password"), password);
+    await this.clickElement(
+      commonLocators.inputWithAttribute("value", "LOGIN")
+    );
   }
 }
