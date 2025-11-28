@@ -1,0 +1,26 @@
+{
+  "name": "pw_bdd_ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:qa": "set SALT=a1b2c3d4&&set ENV=qa&& npx playwright test",
+    "test:dev": "set SALT=a1b2c3d4&&set ENV=dev&& npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@playwright/test": "^1.56.1",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^24.10.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.2.3",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
