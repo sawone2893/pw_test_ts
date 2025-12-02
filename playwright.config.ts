@@ -11,11 +11,12 @@ import { decrypt } from "./src/utils/CryptoJSUtils";
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
+//Config Directory path
+const configDir = path.resolve(__dirname, "./src/config");
 // Get ENV from CLI or default to 'dev'
 const env = process.env.ENV || "qa";
 // Load corresponding .env file
-
-dotenv.config({ path: path.resolve(__dirname, './src/config', `.env.${env}`) });
+dotenv.config({ path: `${configDir}\\.env.${env}` });
 const url:string=decrypt(process.env.BASE_URL!);
 console.log(`App Url:${url}`);
 /**
